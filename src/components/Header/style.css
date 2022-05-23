@@ -1,0 +1,13 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header__logo {
+}
+
+.Header__navbar {
+    display: flex;
+    justify-content: space-evenly;
+}

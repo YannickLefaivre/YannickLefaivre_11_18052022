@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Kasa",
+  "name": "Kasa : Application for apartment rental between individuals",
   "icons": [
     {
       "src": "favicon.ico",
