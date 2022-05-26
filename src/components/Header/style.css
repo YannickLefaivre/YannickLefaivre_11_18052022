@@ -3,10 +3,13 @@
 /* XS device layout : min-width 280px */
 
 .Header {
-  display: flex;
-  flex-direction: column;
+  max-width: 335px;
+  margin-inline: auto;
   justify-content: center;
   align-items: center;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .Header__logo {
@@ -53,7 +56,25 @@
   }
 }
 
+@media (min-width: 500px) {
+  .Header {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 700px) {
+  .Header {
+    max-width: 580px;
+  }
+}
+
 /* Large and extra large device layout */
+
+@media (min-width: 810px) {
+  .Header {
+    max-width: 780px;
+  }
+}
 
 @media (min-width: 992px) {
   .Header__logo {
@@ -74,5 +95,17 @@
 
   .Header__navbar-item:last-of-type {
     margin-left: var(--desktop-navlink-margin);
+  }
+}
+
+@media (min-width: 1024px) {
+  .Header {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .Header {
+    max-width: 1240px;
   }
 }
