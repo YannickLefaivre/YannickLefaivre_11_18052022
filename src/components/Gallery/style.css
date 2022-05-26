@@ -1,4 +1,5 @@
 .Gallery {
+  min-height: 21.25rem;
   justify-content: center;
 
   display: grid;
