@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './style.css'
 
-export default function Thumbnail({ id, title, cover }) {
+function Thumbnail({ id, title, cover }) {
   return (
     <article className="Thumbnail">
       <Link className="Thumbnail__link" to={`/accommodation-sheet/${id}`}>
@@ -11,3 +12,17 @@ export default function Thumbnail({ id, title, cover }) {
     </article>
   )
 }
+
+Thumbnail.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  cover: PropTypes.string.isRequired,
+}
+
+Thumbnail.defaultProps = {
+  id: '',
+  title: 'Titre de la location',
+  cover: '',
+}
+
+export default Thumbnail
