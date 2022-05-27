@@ -7,7 +7,7 @@
   display: grid;
 }
 
-.Banner__background {
+.Banner__background-image {
   width: inherit;
   height: inherit;
 
@@ -18,7 +18,7 @@
   z-index: -1;
 }
 
-.Banner__background img {
+.Banner__background-image img {
   height: inherit;
   width: inherit;
 
