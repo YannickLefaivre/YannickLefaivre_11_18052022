@@ -3,7 +3,7 @@ import logo from '../../assets/logos/logo-original.svg'
 import './style.css'
 
 export default function Header() {
-  let navbarItemClassName = 'Header__navbar-item'
+  let navbarItemClassName = 'Header__navbar__item'
 
   return (
     <header className="Header">
