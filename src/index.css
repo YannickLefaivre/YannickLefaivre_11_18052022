@@ -33,6 +33,7 @@
   --mobile-navlink-margin: 0.625rem;
 
   --rounded-square: 0.625rem;
+  --carousel-navigation-button-size: 1.5rem;
 }
 
 /* Fonts download */
@@ -84,6 +85,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
   font-weight: 500;
+  color: var(--tertiary-color);
 }
 
 code {
@@ -93,9 +95,54 @@ code {
 
 a {
   text-decoration: none;
+  color: var(--tertiary-color);
 }
 
 ul,
 ol {
   padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: rgb(var(--primary-color));
+}
+
+/* Main content */
+
+.main-content-wrapper {
+  max-width: 335px;
+  margin-inline: auto;
+}
+
+@media (min-width: 500px) {
+  .main-content-wrapper {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 700px) {
+  .main-content-wrapper {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 810px) {
+  .main-content-wrapper {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content-wrapper {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-content-wrapper {
+    max-width: 1240px;
+  }
 }
