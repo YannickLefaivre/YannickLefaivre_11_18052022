@@ -3,11 +3,12 @@
 /* CSS custom properties declaration */
 
 :root {
-  --primary-color: #ff6060;
-  --secondary-color: #f6f6f6;
-  --tertiary-color: #ffffff;
-  --quaternary-color: #000000;
-  --placeholder-background: #c4c4c4;
+  --primary-color: 255, 96, 96;
+  --secondary-color: 246, 246, 246;
+  --tertiary-color: 255, 255, 255;
+  --quaternary-color: 0, 0, 0;
+  --unfilled-stars-color: 227, 227, 227;
+  --placeholder-background: 196, 196, 196;
 
   /* 
     --desktop-font-size-288px-in-rem: 18rem; 404 text font size

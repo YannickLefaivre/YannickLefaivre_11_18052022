@@ -14,7 +14,7 @@
     grid-template-columns: repeat(auto-fit, 21.25rem);
     gap: 3.125rem 3.75rem;
 
-    background-color: var(--secondary-color);
+    background-color: rgb(var(--secondary-color));
     border-radius: 25px;
   }
 }

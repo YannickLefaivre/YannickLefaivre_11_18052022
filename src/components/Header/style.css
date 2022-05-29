@@ -30,7 +30,7 @@
   font-weight: 500;
   text-transform: uppercase;
 
-  color: var(--primary-color);
+  color: rgb(var(--primary-color));
   opacity: 1;
 
   transition: opacity 0.3s ease;
@@ -40,7 +40,7 @@
   opacity: 0.7;
 }
 
-.Header__navbar__item:first {
+.Header__navbar__item:first-of-type {
   margin-right: var(--mobile-navlink-margin);
 }
 
