@@ -2,8 +2,23 @@
   margin-block: 1.6875rem;
 }
 
+.Accommodation-infos {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.Main-accommodation-infos {
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .Accommodation-title-and-tags {
-  margin-block: 0.7rem 0.625rem;
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
@@ -20,7 +35,33 @@
 }
 
 @media (min-width: 992px) {
+}
+
+.Owner-information-and-housing-rating {
+  width: 100%;
+  margin-block: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  display: flex;
+  flex-direction: row;
+  row-gap: 1.6rem;
+}
+
+@media (min-width: 1024px) {
+  .Main-accommodation-infos {
+    margin-bottom: 1.5rem;
+  }
+
   .Accommodation-title-and-tags {
-    margin-block: 1.875rem 1.25rem;
+    max-width: 42rem;
+  }
+
+  .Owner-information-and-housing-rating {
+    max-width: 13.8rem;
+    margin-block: 0;
+    align-items: flex-end;
+
+    flex-direction: column;
   }
 }

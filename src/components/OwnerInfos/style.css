@@ -1,0 +1,58 @@
+.Owner-infos {
+  align-items: center;
+
+  display: flex;
+  gap: 0 0.65rem;
+  order: 1;
+}
+
+.Owner-infos__name {
+  width: 5.8125rem;
+  height: 2.0625rem;
+  margin: 0;
+  align-items: center;
+
+  display: flex;
+
+  text-align: right;
+  text-transform: capitalize;
+  font-size: var(--mobile-font-size-12px-in-rem);
+}
+
+.Owner-infos__profil-picture {
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+
+  background-color: rgb(var(--placeholder-background));
+  border-radius: var(--circle);
+}
+
+.Owner-infos__profil-picture img {
+  width: inherit;
+  height: inherit;
+
+  border-radius: var(--circle);
+}
+
+@media (min-width: 992px) {
+  .Owner-infos__name {
+    height: 3.25rem;
+
+    font-size: var(--desktop-font-size-18px-in-rem);
+  }
+
+  .Owner-infos__profil-picture {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Owner-infos {
+    order: 0;
+  }
+}
