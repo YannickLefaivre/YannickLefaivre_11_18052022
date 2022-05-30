@@ -8,8 +8,8 @@ export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/accommodation-sheet/:id" element={<AccommodationSheet />} />
-      <Route path="/about" element={<About />} />
+      <Route path="accommodation-sheet/:id" element={<AccommodationSheet />} />
+      <Route path="about" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
