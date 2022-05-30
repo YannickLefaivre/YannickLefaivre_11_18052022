@@ -1,3 +1,26 @@
 .main-content-wrapper--accommodation-sheet {
   margin-block: 1.6875rem;
 }
+
+.Accommodation-title-and-tags {
+  margin-block: 0.7rem 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.Accommodation-tag-list {
+  width: 100%;
+  height: auto;
+  margin-block: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.625rem;
+}
+
+@media (min-width: 992px) {
+  .Accommodation-title-and-tags {
+    margin-block: 1.875rem 1.25rem;
+  }
+}
