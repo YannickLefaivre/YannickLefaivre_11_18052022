@@ -34,7 +34,13 @@
   gap: 0.625rem;
 }
 
-@media (min-width: 992px) {
+.Additional-accommodation-information {
+  width: 100%;
+  justify-content: space-between;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.254375rem 4.75rem;
 }
 
 .Owner-information-and-housing-rating {
