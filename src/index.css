@@ -3,11 +3,12 @@
 /* CSS custom properties declaration */
 
 :root {
-  --primary-color: #ff6060;
-  --secondary-color: #f6f6f6;
-  --tertiary-color: #ffffff;
-  --quaternary-color: #000000;
-  --placeholder-background: #c4c4c4;
+  --primary-color: 255, 96, 96;
+  --secondary-color: 246, 246, 246;
+  --tertiary-color: 255, 255, 255;
+  --quaternary-color: 0, 0, 0;
+  --unfilled-stars-color: 227, 227, 227;
+  --placeholder-background: 196, 196, 196;
 
   /* 
     --desktop-font-size-288px-in-rem: 18rem; 404 text font size
@@ -32,6 +33,9 @@
   --mobile-navlink-margin: 0.625rem;
 
   --rounded-square: 0.625rem;
+  --circle: 50%;
+
+  --carousel-navigation-button-size: 1.5rem;
 }
 
 /* Fonts download */
@@ -69,7 +73,7 @@
   font-weight: 700;
 }
 
-/* Global style */
+/* ---- Global style ---- */
 
 :where(*::after, *::before, *) {
   box-sizing: border-box;
@@ -83,18 +87,81 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
   font-weight: 500;
+  color: var(--tertiary-color);
 }
+
+/* Static elements */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-a {
-  text-decoration: none;
-}
-
 ul,
 ol {
+  list-style-type: none;
   padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: rgb(var(--primary-color));
+}
+
+/* Interactive elements */
+
+a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+
+button {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+}
+
+/* Main content */
+
+.main-content-wrapper {
+  max-width: 335px;
+  margin-inline: auto;
+}
+
+@media (min-width: 500px) {
+  .main-content-wrapper {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 700px) {
+  .main-content-wrapper {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 810px) {
+  .main-content-wrapper {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content-wrapper {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-content-wrapper {
+    max-width: 1240px;
+  }
 }

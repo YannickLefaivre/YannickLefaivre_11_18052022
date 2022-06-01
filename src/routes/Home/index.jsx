@@ -5,7 +5,7 @@ import './style.css'
 
 function Home() {
   return (
-    <main className="Home">
+    <main className="main-content-wrapper main-content-wrapper--home-page">
       <section>
         <Banner
           bannerBackgroundImage={homeBanner}

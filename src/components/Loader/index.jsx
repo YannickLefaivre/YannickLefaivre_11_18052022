@@ -8,7 +8,7 @@ export default function Loader() {
       <img
         className="Loader__icon"
         src={kasaHouse}
-        alt="Chargement des aperçus des logements"
+        alt="Chargement des données du site"
       />
     </div>
   )

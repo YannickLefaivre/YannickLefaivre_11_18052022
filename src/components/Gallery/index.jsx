@@ -5,7 +5,7 @@ import Loader from '../Loader'
 import './style.css'
 
 export default function Gallery() {
-  const { isLoading, data, error } = useFetch('logements.json')
+  const { isLoading, data, error } = useFetch('/logements.json')
 
   if (error) {
     return <Error />
