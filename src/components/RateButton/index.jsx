@@ -1,11 +1,16 @@
+import PropTypes from 'prop-types'
 import './style.css'
 
-function RateButton() {
+function RateButton({ isChecked }) {
   return (
     <li className="Rate-button-container">
       <button className="Rate-button">
         <svg
-          className="Rate-button__icon"
+          className={
+            isChecked
+              ? 'Rate-button__icon Rate-button__icon--checked-state'
+              : 'Rate-button__icon'
+          }
           width="15"
           height="15"
           viewBox="0 0 30 30"
@@ -19,6 +24,14 @@ function RateButton() {
       </button>
     </li>
   )
+}
+
+RateButton.propTypes = {
+  isChecked: PropTypes.bool.isRequired,
+}
+
+RateButton.defaultProps = {
+  isChecked: false,
 }
 
 export default RateButton

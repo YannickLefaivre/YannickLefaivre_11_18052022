@@ -29,12 +29,6 @@
   color: rgb(var(--unfilled-stars-color));
 }
 
-.Rate-button:hover .Rate-button__icon,
-.Rate-button:active .Rate-button__icon,
-.Rate-button:focus .Rate-button__icon {
-  color: rgb(var(--primary-color));
-}
-
 .Rate-button__icon--checked-state {
   color: rgb(var(--primary-color));
 }

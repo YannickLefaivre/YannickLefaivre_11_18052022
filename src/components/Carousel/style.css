@@ -13,6 +13,7 @@
   height: inherit;
 
   object-fit: cover;
+  object-position: center;
   background-color: rgb(var(--secondary-color));
   border-radius: var(--rounded-square);
 }

@@ -2,6 +2,13 @@
   margin-block: 1.6875rem;
 }
 
+.main-content-wrapper--accommodation-sheet--loading-state {
+  min-height: 21.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Accommodation-infos {
   width: 100%;
 
@@ -43,7 +50,7 @@
   gap: 1.254375rem 4.75rem;
 }
 
-.Owner-information-and-housing-rating {
+.Accommodation-host-and-rate {
   width: 100%;
   margin-block: 1rem;
   align-items: center;
@@ -63,7 +70,7 @@
     max-width: 42rem;
   }
 
-  .Owner-information-and-housing-rating {
+  .Accommodation-host-and-rate {
     max-width: 13.8rem;
     margin-block: 0;
     align-items: flex-end;

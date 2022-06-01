@@ -1,4 +1,4 @@
-.Owner-infos {
+.Host {
   align-items: center;
 
   display: flex;
@@ -6,7 +6,7 @@
   order: 1;
 }
 
-.Owner-infos__name {
+.Host__name {
   width: 5.8125rem;
   height: 2.0625rem;
   margin: 0;
@@ -19,7 +19,7 @@
   font-size: var(--mobile-font-size-12px-in-rem);
 }
 
-.Owner-infos__profil-picture {
+.Host__profil-picture {
   width: 2rem;
   height: 2rem;
   justify-content: center;
@@ -31,28 +31,31 @@
   border-radius: var(--circle);
 }
 
-.Owner-infos__profil-picture img {
+.Host__profil-picture img {
   width: inherit;
   height: inherit;
+
+  object-fit: cover;
+  object-position: center;
 
   border-radius: var(--circle);
 }
 
 @media (min-width: 992px) {
-  .Owner-infos__name {
+  .Host__name {
     height: 3.25rem;
 
     font-size: var(--desktop-font-size-18px-in-rem);
   }
 
-  .Owner-infos__profil-picture {
+  .Host__profil-picture {
     width: 4rem;
     height: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .Owner-infos {
+  .Host {
     order: 0;
   }
 }

@@ -1,54 +1,87 @@
+import { useParams } from 'react-router-dom'
+import { useFetch } from '../../utils/hooks'
 import Carousel from '../../components/Carousel'
 import Title from '../../components/Title'
 import Tag from '../../components/Tag'
-import OwnerInfos from '../../components/OwnerInfos'
+import Host from '../../components/Host'
 import Rate from '../../components/Rate'
 import Dropdown from '../../components/Dropdown'
+import Error from '../../components/Error'
+import Loader from '../../components/Loader'
 import './style.css'
 
 function AccommodationSheet() {
+  const { isLoading, data, error } = useFetch('/logements.json')
+  const { id } = useParams()
+
+  const currentAccommodation = data?.find(
+    (accommodation) => accommodation.id === id
+  )
+
+  console.log('Current accommodation:', currentAccommodation)
+
   return (
     <main className="main-content-wrapper main-content-wrapper--accommodation-sheet">
-      <Carousel />
-      <section className="Accommodation-infos">
-        <div className="Main-accommodation-infos">
-          <div className="Accommodation-title-and-tags">
-            <Title />
-            <ul className="Accommodation-tag-list">
-              <Tag name="cozy" />
-              <Tag name="canal" />
-              <Tag name="paris 10" />
-            </ul>
+      {error ? (
+        <Error />
+      ) : isLoading ? (
+        <Loader />
+      ) : (
+        <section className="Accommodation-infos">
+          {currentAccommodation && (
+            <Carousel
+              currentAccommodationPictures={currentAccommodation.pictures}
+            />
+          )}
+          <div className="Main-accommodation-infos">
+            <div className="Accommodation-title-and-tags">
+              {currentAccommodation && (
+                <Title
+                  currentAccommodationLocation={currentAccommodation.location}
+                  currentAccommodationTitle={currentAccommodation.title}
+                />
+              )}
+              <ul className="Accommodation-tag-list">
+                {currentAccommodation &&
+                  currentAccommodation.tags.map((tagName) => (
+                    <Tag key={tagName} name={tagName} />
+                  ))}
+              </ul>
+            </div>
+            <div className="Accommodation-host-and-rate">
+              {currentAccommodation && (
+                <Host
+                  hostName={currentAccommodation.host.name}
+                  hostPicture={currentAccommodation.host.picture}
+                />
+              )}
+              {currentAccommodation && (
+                <Rate
+                  currentAccommodationRating={parseInt(
+                    currentAccommodation.rating
+                  )}
+                />
+              )}
+            </div>
           </div>
-          <div className="Owner-information-and-housing-rating">
-            <OwnerInfos />
-            <Rate />
-          </div>
-        </div>
 
-        <div className="Additional-accommodation-information">
-          <Dropdown heading="Description">
-            <p className="Dropdown__content Dropdown__content--description-of-the-accommodation">
-              Vous serez à 50m du canal Saint-martin où vous pourrez
-              pique-niquer l'été et à côté de nombreux bars et restaurants. Au
-              cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement
-              parfait pour les voyageurs en solo et les voyageurs d'affaires.
-              Vous êtes à 1 station de la gare de l'est (7 minutes à pied).
-            </p>
-          </Dropdown>
-          <Dropdown heading="Équipements">
-            <ul className="Dropdown__content Dropdown__content--housing-equipment">
-              <li>Climatisation</li>
-              <li>Wi-Fi</li>
-              <li>Cuisine</li>
-              <li>Espace de travail</li>
-              <li>Fer à repasser</li>
-              <li>Sèche-cheveux</li>
-              <li>Cintres</li>
-            </ul>
-          </Dropdown>
-        </div>
-      </section>
+          <div className="Additional-accommodation-information">
+            <Dropdown heading="Description">
+              <p className="Dropdown__content Dropdown__content--description-of-the-accommodation">
+                {currentAccommodation && currentAccommodation.description}
+              </p>
+            </Dropdown>
+            <Dropdown heading="Équipements">
+              <ul className="Dropdown__content Dropdown__content--housing-equipment">
+                {currentAccommodation &&
+                  currentAccommodation.equipments.map((equipment) => (
+                    <li key={`${equipment}`}>{equipment}</li>
+                  ))}
+              </ul>
+            </Dropdown>
+          </div>
+        </section>
+      )}
     </main>
   )
 }
