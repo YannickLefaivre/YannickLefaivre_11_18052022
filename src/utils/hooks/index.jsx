@@ -6,15 +6,19 @@ export function useFetch(url) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
     const fetchData = async () => {
+      setLoading(true)
       try {
         const response = await fetch(url)
         const data = await response.json()
 
+        console.log('Fetched data:', data)
         setData(data)
       } catch (e) {
-        console.log('==== error ====', e)
+        console.log(
+          "Fetching of accommodation data doesn't succeed because of this error:",
+          e
+        )
         setError(true)
       } finally {
         setLoading(false)

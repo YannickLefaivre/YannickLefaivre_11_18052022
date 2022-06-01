@@ -39,7 +39,7 @@
   grid-column: 1;
   grid-row: 1;
 
-  color: var(--tertiary-color);
+  color: rgb(var(--tertiary-color));
   z-index: 1;
 }
 
