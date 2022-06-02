@@ -2,21 +2,52 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import './style.css'
 
-function Dropdown({ children, heading }) {
+function Dropdown({ children, heading, isAChildOfAboutComponent }) {
   const [isOpen, setIsOpen] = useState(false)
+  const aboutPageModifierSuffix = '--about-page'
+  const whiteSpace = ' '
+  const blankString = ''
 
   return (
-    <div className={isOpen ? 'Dropdown Dropdown--open' : 'Dropdown'}>
-      <div className="Dropdown-trigger-wrapper">
-        <h3 className="Dropdown__label">{heading}</h3>
+    <div
+      className={`Dropdown${
+        isAChildOfAboutComponent
+          ? `${whiteSpace}Dropdown${aboutPageModifierSuffix}`
+          : blankString
+      } ${isOpen ? `${whiteSpace}Dropdown--open` : blankString}`}
+    >
+      <div
+        className={`Dropdown-trigger-wrapper${
+          isAChildOfAboutComponent
+            ? `${whiteSpace}Dropdown-trigger-wrapper${aboutPageModifierSuffix}`
+            : blankString
+        }`}
+      >
+        <h3
+          className={`Dropdown__label${
+            isAChildOfAboutComponent
+              ? `${whiteSpace}Dropdown__label${aboutPageModifierSuffix}`
+              : blankString
+          }`}
+        >
+          {heading}
+        </h3>
         <button
-          className="Dropdown__trigger"
+          className={`Dropdown__trigger${
+            isAChildOfAboutComponent
+              ? `${whiteSpace}Dropdown__trigger${aboutPageModifierSuffix}`
+              : blankString
+          }`}
           onClick={() => {
             !isOpen ? setIsOpen(true) : setIsOpen(false)
           }}
         >
           <svg
-            className="Dropdown__trigger__icon"
+            className={`Dropdown__trigger__icon${
+              isAChildOfAboutComponent
+                ? `${whiteSpace}Dropdown__trigger__icon${aboutPageModifierSuffix}`
+                : blankString
+            }`}
             width="15"
             height="13"
             viewBox="0 0 25 15"
@@ -38,6 +69,7 @@ function Dropdown({ children, heading }) {
 Dropdown.propTypes = {
   heading: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  isAChildOfAboutComponent: PropTypes.bool.isRequired,
 }
 
 Dropdown.defaultProps = {
@@ -56,6 +88,7 @@ Dropdown.defaultProps = {
       Contenu du menu déroulant
     </p>
   ),
+  isAChildOfAboutComponent: false,
 }
 
 export default Dropdown
