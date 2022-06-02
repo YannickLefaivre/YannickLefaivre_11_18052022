@@ -23,9 +23,9 @@ function Carousel({ currentAccommodationPictures }) {
           alt="Intérieure du logement"
         />
       )}
-      <p className="Carousel__current-index-indicator sr-only-on-mobile">{`${
-        currentIndex + 1
-      }/${currentAccommodationPictures.length}`}</p>
+      <p className="Carousel__current-index-indicator">{`${currentIndex + 1}/${
+        currentAccommodationPictures.length
+      }`}</p>
       {currentAccommodationPictures.length > 1 && (
         <a
           className="Carousel__navigation-button Carousel__navigation-button--previous-picture"

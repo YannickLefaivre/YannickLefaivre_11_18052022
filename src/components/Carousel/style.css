@@ -19,6 +19,7 @@
 }
 
 .Carousel__current-index-indicator {
+  display: none;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -76,6 +77,10 @@
 @media (min-width: 992px) {
   .Carousel {
     margin-bottom: 1.875rem;
+  }
+
+  .Carousel__current-index-indicator {
+    display: block;
   }
 
   .Carousel__navigation-button {
