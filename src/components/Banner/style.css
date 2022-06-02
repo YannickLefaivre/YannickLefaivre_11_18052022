@@ -7,6 +7,11 @@
   display: grid;
 }
 
+.Banner--about-page {
+  height: 13.9735rem;
+  margin-bottom: 0;
+}
+
 .Banner__background-image {
   width: inherit;
   height: inherit;
@@ -18,6 +23,10 @@
   z-index: -1;
 }
 
+.Banner__background-image--about-page {
+  filter: brightness(95%);
+}
+
 .Banner__background-image img {
   height: inherit;
   width: inherit;
@@ -25,6 +34,10 @@
   object-fit: cover;
   filter: brightness(40%);
   border-radius: var(--rounded-square);
+}
+
+.Banner__background-image--about-page img {
+  filter: brightness(80%);
 }
 
 .Banner__caption {

@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom'
 import { useFetch } from '../../utils/hooks'
+import PropTypes from 'prop-types'
 import Carousel from '../../components/Carousel'
 import Title from '../../components/Title'
 import Tag from '../../components/Tag'
@@ -10,12 +10,11 @@ import Error from '../../components/Error'
 import Loader from '../../components/Loader'
 import './style.css'
 
-function AccommodationSheet() {
+function AccommodationSheet({ currentAccommodationId }) {
   const { isLoading, data, error } = useFetch('/logements.json')
-  const { id } = useParams()
 
   const currentAccommodation = data?.find(
-    (accommodation) => accommodation.id === id
+    (accommodation) => accommodation.id === currentAccommodationId
   )
 
   console.log('Current accommodation:', currentAccommodation)
@@ -84,6 +83,10 @@ function AccommodationSheet() {
       )}
     </main>
   )
+}
+
+AccommodationSheet.propTypes = {
+  currentAccommodationId: PropTypes.string.isRequired,
 }
 
 export default AccommodationSheet

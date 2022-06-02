@@ -9,7 +9,7 @@ function Home() {
       <section>
         <Banner
           bannerBackgroundImage={homeBanner}
-          alternativeText="view of a rocky seaside"
+          bannerText="Chez vous, partout et ailleurs"
         />
         <Gallery />
       </section>
