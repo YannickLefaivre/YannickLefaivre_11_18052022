@@ -1,0 +1,34 @@
+.main-content-wrapper--about-page {
+  margin-block: 1.0625rem;
+}
+
+.About-page-main-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.1875rem;
+  width: 100%;
+}
+
+.About-page-main-content__kasa-values {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .About-page-main-content {
+    row-gap: var(--about-page-desktop-row-gap);
+  }
+
+  .About-page-main-content__kasa-values {
+    row-gap: var(--about-page-desktop-row-gap);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content-wrapper--about-page {
+    margin-block: 0 2.75rem;
+  }
+}

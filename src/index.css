@@ -36,6 +36,10 @@
   --circle: 50%;
 
   --carousel-navigation-button-size: 1.5rem;
+
+  /* Row gap */
+
+  --about-page-desktop-row-gap: 2rem;
 }
 
 /* Fonts download */
