@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types'
 import './style.css'
 
-function Host({ hostName, hostPicture }) {
+/**
+ * Display host information.
+ *
+ * @param {Object} [props] - The function component props.
+ * @param {string} [props.hostName] - The host name.
+ * @param {string} [props.hostPictureURLs] - Host photo URLs.
+ * @returns {JSX.Element} The Host component.
+ */
+function Host({ hostName, hostPictureURLs }) {
   return (
     <div className="Host">
       <p className="Host__name">{hostName}</p>
       <div className="Host__profil-picture">
-        {hostPicture && <img src={hostPicture} alt="" />}
+        {hostPictureURLs && <img src={hostPictureURLs} alt="" />}
       </div>
     </div>
   )
@@ -14,12 +22,12 @@ function Host({ hostName, hostPicture }) {
 
 Host.propTypes = {
   hostName: PropTypes.string.isRequired,
-  hostPicture: PropTypes.string.isRequired,
+  hostPictureURLs: PropTypes.string.isRequired,
 }
 
 Host.defaultProps = {
   hostName: "Nom de l'hôte",
-  hostPicture: '',
+  hostPictureURLs: '',
 }
 
 export default Host

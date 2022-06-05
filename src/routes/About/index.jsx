@@ -6,6 +6,11 @@ import Loader from '../../components/Loader'
 import aboutBanner from '../../assets/banners/about-banner.jpg'
 import './style.css'
 
+/**
+ * Display the about page with company values ​​and a banner without a caption.
+ *
+ * @returns {JSX.Element} The About component
+ */
 function About() {
   const { isLoading, data, error } = useFetch('/kasa-values.json')
 
@@ -26,7 +31,7 @@ function About() {
               data.map((kasaValue) => (
                 <Dropdown
                   key={`${kasaValue.title}`}
-                  heading={kasaValue.title}
+                  label={kasaValue.title}
                   isAChildOfAboutComponent={true}
                 >
                   <p className="Dropdown__content Dropdown__content--about-page">

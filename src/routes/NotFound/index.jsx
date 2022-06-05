@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
 import './style.css'
 
+/**
+ * Display a 404 error page with an apology message and a link to return to the home page.
+ *
+ * @returns {JSX.Element} The NotFound component.
+ */
 function NotFound() {
   return (
     <main className="main-content-wrapper main-content-wrapper--not-found-page">

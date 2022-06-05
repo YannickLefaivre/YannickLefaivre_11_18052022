@@ -2,31 +2,38 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
 
-function Carousel({ currentAccommodationPictures }) {
+/**
+ * Display a non-automatic carousel with navigation arrows and a position indicator.
+ *
+ * @param {Object} [props] - The function component props.
+ * @param {string[]} [props.currentAccommodationPicturesURLs=[""]] - URL of the images of the accommodation whose accommodation sheet is currently viewed.
+ * @returns {JSX.Element} The Carousel component.
+ */
+function Carousel({ currentAccommodationPicturesURLs }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextPictureIndex =
-    currentIndex + 1 > currentAccommodationPictures.length - 1
+    currentIndex + 1 > currentAccommodationPicturesURLs.length - 1
       ? 0
       : currentIndex + 1
   const previousPictureIndex =
     currentIndex - 1 < 0
-      ? currentAccommodationPictures.length - 1
+      ? currentAccommodationPicturesURLs.length - 1
       : currentIndex - 1
 
   return (
     <div id="carousel" className="Carousel">
-      {currentAccommodationPictures && (
+      {currentAccommodationPicturesURLs && (
         <img
           className="Carousel__picture"
-          src={`${currentAccommodationPictures[currentIndex]}`}
+          src={`${currentAccommodationPicturesURLs[currentIndex]}`}
           alt="Intérieure du logement"
         />
       )}
       <p className="Carousel__current-index-indicator">{`${currentIndex + 1}/${
-        currentAccommodationPictures.length
+        currentAccommodationPicturesURLs.length
       }`}</p>
-      {currentAccommodationPictures.length > 1 && (
+      {currentAccommodationPicturesURLs.length > 1 && (
         <a
           className="Carousel__navigation-button Carousel__navigation-button--previous-picture"
           href="#carousel"
@@ -40,7 +47,7 @@ function Carousel({ currentAccommodationPictures }) {
           </svg>
         </a>
       )}
-      {currentAccommodationPictures.length > 1 && (
+      {currentAccommodationPicturesURLs.length > 1 && (
         <a
           className="Carousel__navigation-button Carousel__navigation-button--next-picture"
           href="#carousel"
@@ -59,11 +66,11 @@ function Carousel({ currentAccommodationPictures }) {
 }
 
 Carousel.propTypes = {
-  currentAccommodationPictures: PropTypes.array.isRequired,
+  currentAccommodationPicturesURLs: PropTypes.array.isRequired,
 }
 
 Carousel.defaultProps = {
-  currentAccommodationPictures: [],
+  currentAccommodationPicturesURLs: [],
 }
 
 export default Carousel

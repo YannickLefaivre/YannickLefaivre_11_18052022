@@ -4,6 +4,11 @@ import Error from '../Error'
 import Loader from '../Loader'
 import './style.css'
 
+/**
+ * Display accommodation thumbnail gallery.
+ *
+ * @returns {JSX.Element} The Gallery component.
+ */
 export default function Gallery() {
   const { isLoading, data, error } = useFetch('/logements.json')
 
@@ -21,7 +26,7 @@ export default function Gallery() {
             key={`accommodation-${accommodation.id}`}
             id={accommodation.id}
             title={accommodation.title}
-            cover={accommodation.cover}
+            coverURL={accommodation.cover}
           />
         ))
       )}
