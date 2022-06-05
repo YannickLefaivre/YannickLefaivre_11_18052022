@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom'
 import { useFetch } from '../../utils/hooks'
 import PropTypes from 'prop-types'
 import Carousel from '../../components/Carousel'
@@ -8,13 +9,19 @@ import Rate from '../../components/Rate'
 import Dropdown from '../../components/Dropdown'
 import Error from '../../components/Error'
 import Loader from '../../components/Loader'
+import NotFound from '../NotFound'
 import './style.css'
 
 function AccommodationSheet({ currentAccommodationId }) {
   const { isLoading, data, error } = useFetch('/logements.json')
+  const { id } = useParams()
+
+  if (id.match(/^[a-z0-9]{8}$/i) === null) {
+    return <NotFound />
+  }
 
   const currentAccommodation = data?.find(
-    (accommodation) => accommodation.id === currentAccommodationId
+    (accommodation) => accommodation.id === id
   )
 
   console.log('Current accommodation:', currentAccommodation)
@@ -83,10 +90,6 @@ function AccommodationSheet({ currentAccommodationId }) {
       )}
     </main>
   )
-}
-
-AccommodationSheet.propTypes = {
-  currentAccommodationId: PropTypes.string.isRequired,
 }
 
 export default AccommodationSheet
