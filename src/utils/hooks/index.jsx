@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react'
 
+/**
+ * Retrieve data from the address specified by the url parameter.
+ *
+ * @param {String} url - the url of the resource to fetch as indicated in the mdn description of the resource parameter of the fetch() api.
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/fetch
+ * @returns {{isLoading: boolean, data: Object, error: boolean}} information from the result of a GET request, such as: the loading status of the resource, the data retrieved and the presence of an error.
+ */
 export function useFetch(url) {
   const [isLoading, setLoading] = useState(false)
   const [data, setData] = useState([])

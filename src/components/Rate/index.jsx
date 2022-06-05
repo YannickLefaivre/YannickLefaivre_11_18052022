@@ -3,10 +3,14 @@ import RateButton from '../RateButton'
 import './style.css'
 
 /**
- * Partially inspired by the tutorial for implementing the render of the accommodation rating
- * @see https://www.geeksforgeeks.org/how-to-create-a-rating-component-in-reactjs/
- * @tutorial How to create a rating component in ReactJS ?
- * @param {number} currentAccommodationRating
+ * Display the rating of an accommodation.
+ *
+ * @param {Object} [props] - the function component props.
+ * @param {number} [props.currentAccommodationRating=0] - Housing rating.
+ *
+ * @see https://www.geeksforgeeks.org/how-to-create-a-rating-component-in-reactjs/ - I was partly inspired by this tutorial to set up the rendering of the accommodation rating.
+ *
+ * @returns {JSX.Element} The Rate component
  */
 function Rate({ currentAccommodationRating }) {
   return (

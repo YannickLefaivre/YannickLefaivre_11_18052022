@@ -2,7 +2,30 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import './style.css'
 
-function Dropdown({ children, heading, isAChildOfAboutComponent }) {
+/**
+ * Display a dropdown whose content is added with the children prop.
+ * 
+ * @param {Object} [props] The function component props.
+ * @param {JSX.Element} [props.children=(
+    <p
+      style={{
+        width: '100%',
+        height: 'auto',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        textAlign: 'center',
+      }}
+    >
+      Contenu du menu déroulant
+    </p>
+  )] - The content of the dropdown.
+ *
+ * @param {string} [props.label='Nom du menu déroulant'] - The dropdown label.
+ * @param {boolean} [props.isAChildOfAboutComponent=false] - Enables (if true) and disables (if false) the display of the banner caption.
+ * @returns {JSX.Element} The Dropdown component.
+ */
+function Dropdown({ label, children, isAChildOfAboutComponent }) {
   const [isOpen, setIsOpen] = useState(false)
   const aboutPageModifierSuffix = '--about-page'
   const whiteSpace = ' '
@@ -30,7 +53,7 @@ function Dropdown({ children, heading, isAChildOfAboutComponent }) {
               : blankString
           }`}
         >
-          {heading}
+          {label}
         </h3>
         <button
           className={`Dropdown__trigger${
@@ -67,13 +90,13 @@ function Dropdown({ children, heading, isAChildOfAboutComponent }) {
 }
 
 Dropdown.propTypes = {
-  heading: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
   isAChildOfAboutComponent: PropTypes.bool.isRequired,
 }
 
 Dropdown.defaultProps = {
-  heading: 'Nom du menu déroulant',
+  label: 'Nom du menu déroulant',
   children: (
     <p
       style={{

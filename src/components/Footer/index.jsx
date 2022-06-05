@@ -1,6 +1,11 @@
 import logo from '../../assets/logos/logo-black-and-white.svg'
 import './style.css'
 
+/**
+ * Display web app footer with Kasa copyright and logo.
+ *
+ * @returns {JSX.Element} The Footer component.
+ */
 export default function Footer() {
   return (
     <footer className="Footer">

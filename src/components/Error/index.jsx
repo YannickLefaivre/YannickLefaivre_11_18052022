@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types'
 import './style.css'
 
+/**
+ * Display an error message.
+ *
+ * @param {Object} [props] - The function component props.
+ * @param {string} [props.message='Une erreur est servenu lorsque nous avons essayé de récupérer les informations que vous vouliez consulter'] - Error message displayed.
+ * @returns {JSX.Element} The Error component.
+ */
 function Error({ message }) {
   return (
     <div className="Error">

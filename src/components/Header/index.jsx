@@ -2,6 +2,11 @@ import { NavLink } from 'react-router-dom'
 import logo from '../../assets/logos/logo-original.svg'
 import './style.css'
 
+/**
+ * Display web app header with its navigation links.
+ *
+ * @returns {JSX.Element} The Header component.
+ */
 export default function Header() {
   let navbarItemClassName = 'Header__navbar__item'
 

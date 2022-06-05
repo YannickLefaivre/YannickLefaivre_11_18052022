@@ -1,5 +1,5 @@
+import { useParams } from 'react-router-dom'
 import { useFetch } from '../../utils/hooks'
-import PropTypes from 'prop-types'
 import Carousel from '../../components/Carousel'
 import Title from '../../components/Title'
 import Tag from '../../components/Tag'
@@ -8,13 +8,24 @@ import Rate from '../../components/Rate'
 import Dropdown from '../../components/Dropdown'
 import Error from '../../components/Error'
 import Loader from '../../components/Loader'
+import NotFound from '../NotFound'
 import './style.css'
 
-function AccommodationSheet({ currentAccommodationId }) {
+/**
+ * Display the listing of the accommodation whose id is stored in the url after the user clicks on his card on the home page.
+ *
+ * @returns {JSX.Element} The AccommodationSheet component.
+ */
+function AccommodationSheet() {
   const { isLoading, data, error } = useFetch('/logements.json')
+  const { id } = useParams()
+
+  if (id.match(/^[a-z0-9]{8}$/i) === null) {
+    return <NotFound />
+  }
 
   const currentAccommodation = data?.find(
-    (accommodation) => accommodation.id === currentAccommodationId
+    (accommodation) => accommodation.id === id
   )
 
   console.log('Current accommodation:', currentAccommodation)
@@ -29,7 +40,7 @@ function AccommodationSheet({ currentAccommodationId }) {
         <section className="Accommodation-infos">
           {currentAccommodation && (
             <Carousel
-              currentAccommodationPictures={currentAccommodation.pictures}
+              currentAccommodationPicturesURLs={currentAccommodation.pictures}
             />
           )}
           <div className="Main-accommodation-infos">
@@ -51,7 +62,7 @@ function AccommodationSheet({ currentAccommodationId }) {
               {currentAccommodation && (
                 <Host
                   hostName={currentAccommodation.host.name}
-                  hostPicture={currentAccommodation.host.picture}
+                  hostPictureURLs={currentAccommodation.host.picture}
                 />
               )}
               {currentAccommodation && (
@@ -65,12 +76,12 @@ function AccommodationSheet({ currentAccommodationId }) {
           </div>
 
           <div className="Additional-accommodation-information">
-            <Dropdown heading="Description">
+            <Dropdown label="Description">
               <p className="Dropdown__content Dropdown__content--description-of-the-accommodation">
                 {currentAccommodation && currentAccommodation.description}
               </p>
             </Dropdown>
-            <Dropdown heading="Équipements">
+            <Dropdown label="Équipements">
               <ul className="Dropdown__content Dropdown__content--housing-equipment">
                 {currentAccommodation &&
                   currentAccommodation.equipments.map((equipment) => (
@@ -83,10 +94,6 @@ function AccommodationSheet({ currentAccommodationId }) {
       )}
     </main>
   )
-}
-
-AccommodationSheet.propTypes = {
-  currentAccommodationId: PropTypes.string.isRequired,
 }
 
 export default AccommodationSheet

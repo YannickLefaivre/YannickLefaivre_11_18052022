@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types'
 import './style.css'
 
+/**
+ * Display the title of an accommodation and its location.
+ *
+ * @param {Object} [props] - The function component props.
+ * @param {string} [props.currentAccommodationTitle='Localisation du logement'] - The accommodation title.
+ * @param {string} [props.currentAccommodationLocation='Titre du logement'] - The location of the accommodation.
+ * @returns {JSX.Element} The Title component.
+ */
 function Title({ currentAccommodationTitle, currentAccommodationLocation }) {
   return (
     <div className="Title">

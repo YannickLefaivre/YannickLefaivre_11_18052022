@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types'
 import './style.css'
 
+/**
+ * Display a banner with a background image and optional caption
+ *
+ * @param {Object} [props] - The function component props
+ * @param {string} [props.bannerBackgroundImage=""] - The image background of the banner.
+ * @param {string} [props.bannerText=""] - The caption of the banner.
+ * @param {boolean} [props.isAChildOfAboutComponent=false] - Enables (if true) and disables (if false) the display of the banner caption.
+ * @returns {JSX.Element} the Banner component.
+ */
 function Banner({
   bannerBackgroundImage,
   bannerText,
