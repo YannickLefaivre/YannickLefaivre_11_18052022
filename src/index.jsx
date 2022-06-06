@@ -4,7 +4,7 @@ import './index.css'
 import App from './app'
 
 /**
- * Lets render React 18 app in root div.
+ * The React application entry point. Using createRoot() allows using React 18 features, including batching.
  */
 const root = ReactDOM.createRoot(document.body.querySelector('#root'))
 root.render(
