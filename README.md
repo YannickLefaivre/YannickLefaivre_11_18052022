@@ -1,3 +1,15 @@
+# A sample of the tools used for this project
+
+**Web application initializer :** Create React App [(see section below)](https://github.com/YannickLefaivre/YannickLefaivre_11_18052022#getting-started-with-create-react-app)
+
+**Router :** [React Router DOM v6](https://reactrouter.com/)
+
+**Code formatter :** [Prettier](https://prettier.io/)
+
+**Linter :** [ESLint](https://eslint.org/)
+
+**Favicon generator :** [Favicon.io](https://favicon.io/favicon-converter/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
