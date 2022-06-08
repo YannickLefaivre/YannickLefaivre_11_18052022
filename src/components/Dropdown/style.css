@@ -21,7 +21,7 @@
   transform: rotate(180deg);
 }
 
-.Dropdown-trigger-wrapper {
+.Dropdown-trigger-and-label-container {
   height: 1.870625rem;
   padding-inline: 0.7rem 0.2rem;
   justify-content: space-between;
@@ -71,15 +71,16 @@
   border-radius: 0 0 5px 5px;
 }
 
-.Dropdown__content--description-of-the-accommodation {
-  margin-block: 0;
+.Dropdown__content--empty {
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
 }
 
-.Dropdown__content--housing-equipment {
-  color: rgb(var(--primary-color));
-}
-
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   .Dropdown {
     width: 40%;
   }
@@ -90,7 +91,7 @@
     width: 43%;
   }
 
-  .Dropdown-trigger-wrapper {
+  .Dropdown-trigger-and-label-container {
     height: 3.25rem;
     padding-inline: 1.25rem 0.25rem;
     width: 100%;
@@ -116,54 +117,10 @@
 
     font-size: var(--desktop-font-size-18px-in-rem);
   }
-
-  .Dropdown__content--about-page {
-    min-height: auto;
-    padding-block: 1.5rem 0.8rem;
-  }
-}
-
-@media (min-width: 500px) {
-  .Dropdown {
-    width: 40%;
-  }
-
-  .Dropdown--about-page {
-    width: 75%;
-  }
-}
-
-@media (min-width: 992px) {
-  .Dropdown-trigger-wrapper--about-page {
-    height: 2.9375rem;
-    padding-right: 1rem;
-  }
-
-  .Dropdown__label--about-page {
-    font-size: var(--desktop-font-size-24px-in-rem);
-  }
-
-  .Dropdown__content--about-page {
-    font-size: var(--desktop-font-size-24px-in-rem);
-  }
-
-  .Dropdown__trigger--about-page {
-    height: 1.8rem;
-    width: 1.8rem;
-  }
-
-  .Dropdown__trigger__icon--about-page {
-    height: 1.3rem;
-    width: 1.3rem;
-  }
 }
 
 @media (min-width: 1440px) {
   .Dropdown {
     width: 36.375rem;
-  }
-
-  .Dropdown--about-page {
-    width: 63.9375rem;
   }
 }

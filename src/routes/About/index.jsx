@@ -24,7 +24,10 @@ function About() {
         <div className="About-page-main-content">
           <Banner
             bannerBackgroundImage={aboutBanner}
-            isAChildOfAboutComponent={true}
+            styleModifier={{
+              bannerContainer: 'Banner--about-page',
+              backgroundImageContainer: 'Banner__background-image--about-page',
+            }}
           />
           <div className="About-page-main-content__kasa-values">
             {data &&
@@ -32,7 +35,14 @@ function About() {
                 <Dropdown
                   key={`${kasaValue.title}`}
                   label={kasaValue.title}
-                  isAChildOfAboutComponent={true}
+                  styleModifier={{
+                    dropdownContainer: 'Dropdown--about-page',
+                    triggerAndLabelContainer:
+                      'Dropdown-trigger-and-label-container--about-page',
+                    label: 'Dropdown__label--about-page',
+                    trigger: 'Dropdown__trigger--about-page',
+                    triggerIcon: 'Dropdown__trigger__icon--about-page',
+                  }}
                 >
                   <p className="Dropdown__content Dropdown__content--about-page">
                     {kasaValue.description}
