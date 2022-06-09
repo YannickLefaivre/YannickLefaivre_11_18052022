@@ -3,10 +3,15 @@ import RateButton from '../RateButton'
 import './style.css'
 
 /**
+ * A positive or negative whole number.
+ * @typedef {Number} Integer
+ */
+
+/**
  * Display the rating of an accommodation.
  *
- * @param {Object} [props] - the function component props.
- * @param {number} [props.currentAccommodationRating=0] - Housing rating.
+ * @param {Object} [Props] - the function component Props.
+ * @param {Integer} [Props.currentAccommodationRating=0] - Accommodation rating.
  *
  * @see https://www.geeksforgeeks.org/how-to-create-a-rating-component-in-reactjs/ - I was partly inspired by this tutorial to set up the rendering of the accommodation rating.
  *

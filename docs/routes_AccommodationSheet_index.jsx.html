@@ -26,8 +26,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { useParams } from 'react-router-dom'
-import { useFetch } from '../../utils/hooks'
+            <pre class="prettyprint source linenums"><code>import { useEffect, useState } from 'react'
+import { AccommodationSheetDataProvider } from '../../utils/provider'
+import { useParams } from 'react-router-dom'
 import Carousel from '../../components/Carousel'
 import Title from '../../components/Title'
 import Tag from '../../components/Tag'
@@ -40,23 +41,45 @@ import NotFound from '../NotFound'
 import './style.css'
 
 /**
- * Display the listing of the accommodation whose id is stored in the url after the user clicks on his card on the home page.
+ * Display the listing of the accommodation whose
+ * id is stored in the url after the user clicks on
+ * his card on the home page.
  *
  * @returns {JSX.Element} The AccommodationSheet component.
  */
 function AccommodationSheet() {
-  const { isLoading, data, error } = useFetch('/logements.json')
-  const { id } = useParams()
+  const [isLoading, setLoading] = useState(true)
+  const [currentAccommodationSheetData, setCurrentAccommodationSheetData] =
+    useState(null)
 
-  if (id.match(/^[a-z0-9]{8}$/i) === null) {
+  const [error, setError] = useState(false)
+
+  const { id } = useParams()
+  const invalidId = id.match(/^[a-z0-9]{8}$/i) === null
+
+  useEffect(() => {
+    if (!invalidId) {
+      const getCurrentAccommodationData = async () => {
+        try {
+          const accommodationSheetData = await AccommodationSheetDataProvider(
+            id
+          )
+
+          setCurrentAccommodationSheetData(accommodationSheetData)
+        } catch (err) {
+          setError(true)
+        } finally {
+          setLoading(false)
+        }
+      }
+
+      getCurrentAccommodationData()
+    }
+  }, [])
+
+  if (invalidId) {
     return &lt;NotFound />
   }
-
-  const currentAccommodation = data?.find(
-    (accommodation) => accommodation.id === id
-  )
-
-  console.log('Current accommodation:', currentAccommodation)
 
   return (
     &lt;main className="main-content-wrapper main-content-wrapper--accommodation-sheet">
@@ -66,37 +89,45 @@ function AccommodationSheet() {
         &lt;Loader />
       ) : (
         &lt;section className="Accommodation-infos">
-          {currentAccommodation &amp;&amp; (
+          {currentAccommodationSheetData &amp;&amp; (
             &lt;Carousel
-              currentAccommodationPicturesURLs={currentAccommodation.pictures}
+              currentAccommodationPicturesURLs={
+                currentAccommodationSheetData.pictures
+              }
             />
           )}
           &lt;div className="Main-accommodation-infos">
             &lt;div className="Accommodation-title-and-tags">
-              {currentAccommodation &amp;&amp; (
+              {currentAccommodationSheetData &amp;&amp; (
                 &lt;Title
-                  currentAccommodationLocation={currentAccommodation.location}
-                  currentAccommodationTitle={currentAccommodation.title}
+                  currentAccommodationLocation={
+                    currentAccommodationSheetData.location
+                  }
+                  currentAccommodationTitle={
+                    currentAccommodationSheetData.title
+                  }
                 />
               )}
               &lt;ul className="Accommodation-tag-list">
-                {currentAccommodation &amp;&amp;
-                  currentAccommodation.tags.map((tagName) => (
+                {currentAccommodationSheetData &amp;&amp;
+                  currentAccommodationSheetData.tags.map((tagName) => (
                     &lt;Tag key={tagName} name={tagName} />
                   ))}
               &lt;/ul>
             &lt;/div>
             &lt;div className="Accommodation-host-and-rate">
-              {currentAccommodation &amp;&amp; (
+              {currentAccommodationSheetData &amp;&amp; (
                 &lt;Host
-                  hostName={currentAccommodation.host.name}
-                  hostPictureURLs={currentAccommodation.host.picture}
+                  hostName={currentAccommodationSheetData.hostInformation.name}
+                  hostPictureURLs={
+                    currentAccommodationSheetData.hostInformation.picture
+                  }
                 />
               )}
-              {currentAccommodation &amp;&amp; (
+              {currentAccommodationSheetData &amp;&amp; (
                 &lt;Rate
                   currentAccommodationRating={parseInt(
-                    currentAccommodation.rating
+                    currentAccommodationSheetData.rating
                   )}
                 />
               )}
@@ -106,13 +137,14 @@ function AccommodationSheet() {
           &lt;div className="Additional-accommodation-information">
             &lt;Dropdown label="Description">
               &lt;p className="Dropdown__content Dropdown__content--description-of-the-accommodation">
-                {currentAccommodation &amp;&amp; currentAccommodation.description}
+                {currentAccommodationSheetData &amp;&amp;
+                  currentAccommodationSheetData.description}
               &lt;/p>
             &lt;/Dropdown>
             &lt;Dropdown label="Équipements">
               &lt;ul className="Dropdown__content Dropdown__content--housing-equipment">
-                {currentAccommodation &amp;&amp;
-                  currentAccommodation.equipments.map((equipment) => (
+                {currentAccommodationSheetData &amp;&amp;
+                  currentAccommodationSheetData.equipments.map((equipment) => (
                     &lt;li key={`${equipment}`}>{equipment}&lt;/li>
                   ))}
               &lt;/ul>
@@ -135,13 +167,13 @@ export default AccommodationSheet
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#AccommodationSheet">AccommodationSheet</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#Dropdown">Dropdown</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Host">Host</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#Rate">Rate</a></li><li><a href="global.html#RateButton">RateButton</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#Thumbnail">Thumbnail</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.html#.exports">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#AboutDataProvider">AboutDataProvider</a></li><li><a href="global.html#AccommodationSheet">AccommodationSheet</a></li><li><a href="global.html#AccommodationSheetDataProvider">AccommodationSheetDataProvider</a></li><li><a href="global.html#alertFetchFailure">alertFetchFailure</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#Dropdown">Dropdown</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#GalleryDataProvider">GalleryDataProvider</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Host">Host</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#Rate">Rate</a></li><li><a href="global.html#RateButton">RateButton</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#Thumbnail">Thumbnail</a></li><li><a href="global.html#Title">Title</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 07 2022 13:35:38 GMT-0400 (heure normale de l’Amazonie)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 09 2022 17:31:00 GMT-0400 (heure normale de l’Amazonie)
 </footer>
 
 <script> prettyPrint(); </script>

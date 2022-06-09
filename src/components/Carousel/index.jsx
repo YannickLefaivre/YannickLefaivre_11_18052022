@@ -5,8 +5,8 @@ import './style.css'
 /**
  * Display a non-automatic carousel with navigation arrows and a position indicator.
  *
- * @param {Object} [props] - The function component props.
- * @param {string[]} [props.currentAccommodationPicturesURLs=[""]] - URL of the images of the accommodation whose accommodation sheet is currently viewed.
+ * @param {Object} [Props] - The function component Props.
+ * @param {string[]} [Props.currentAccommodationPicturesURLs=[""]] - URL of the images of the accommodation whose accommodation sheet is currently viewed.
  * @returns {JSX.Element} The Carousel component.
  */
 function Carousel({ currentAccommodationPicturesURLs }) {

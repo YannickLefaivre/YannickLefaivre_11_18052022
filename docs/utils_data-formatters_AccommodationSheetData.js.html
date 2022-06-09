@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Gallery/index.jsx</title>
+    <title>JSDoc: Source: utils/data-formatters/AccommodationSheetData.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Gallery/index.jsx</h1>
+    <h1 class="page-title">Source: utils/data-formatters/AccommodationSheetData.js</h1>
 
     
 
@@ -26,57 +26,53 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { useState, useEffect } from 'react'
-import { GalleryDataProvider } from '../../utils/provider'
-import Thumbnail from '../Thumbnail'
-import Loader from '../Loader'
-import Error from '../Error'
-import './style.css'
-
-/**
- * Display accommodation thumbnail gallery.
- *
- * @returns {JSX.Element} The Gallery component.
+            <pre class="prettyprint source linenums"><code>/**
+ * A class that formats accommodation data to only
+ * retrieve data used by the accommodation sheet page.
  */
-export default function Gallery() {
-  const [isLoading, setLoading] = useState(true)
-  const [galleryComponentData, setGalleryComponentData] = useState(null)
-  const [error, setError] = useState(false)
+export default class AccommodationSheetData {
+  /**
+   * A positive or negative whole number.
+   * @typedef {Number} Integer
+   */
 
-  useEffect(() => {
-    const getGalleryComponentData = async () => {
-      try {
-        const galleryData = await GalleryDataProvider()
-
-        setGalleryComponentData(galleryData)
-      } catch (err) {
-        setError(true)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    getGalleryComponentData()
-  }, [])
-
-  return (
-    &lt;div className="Gallery">
-      {error ? (
-        &lt;Error />
-      ) : isLoading ? (
-        &lt;Loader />
-      ) : (
-        galleryComponentData.map((accommodation) => (
-          &lt;Thumbnail
-            key={`accommodation-${accommodation.id}`}
-            id={accommodation.id}
-            title={accommodation.title}
-            coverURL={accommodation.cover}
-          />
-        ))
-      )}
-    &lt;/div>
-  )
+  /**
+   * Create an AccommodationSheet object
+   *
+   * @param {Object} data - Current viewing accommodation sheet data
+   * @param {String} data.id - Current accommodation id
+   * @param {String[]} data.pictures - Current accommodation pictures URLs
+   * @param {String} data.title - Current accommodation title
+   * @param {String} data.location - Current accommodation location
+   * @param {String[]} data.tags - Current accommodation tags
+   * @param {Object} data.host - Current accommodation host
+   * @param {String} data.host.name - Current accommodation host name
+   * @param {String} data.host.picture - Current accommodation host picture URL
+   * @param {Integer} data.rating - Current accommodation rating
+   * @param {String} data.description - Current accommodation description
+   * @param {String[]} data.equipements - Current accommodation equipments
+   */
+  constructor({
+    id,
+    pictures,
+    title,
+    location,
+    tags,
+    host,
+    rating,
+    description,
+    equipments,
+  }) {
+    this.id = id
+    this.title = title
+    this.location = location
+    this.tags = tags
+    this.pictures = pictures
+    this.hostInformation = host
+    this.rating = rating
+    this.description = description
+    this.equipments = equipments
+  }
 }
 </code></pre>
         </article>

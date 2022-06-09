@@ -5,10 +5,10 @@ import './style.css'
 /**
  * Display the thumbnail of an accommodation with its title and its cover included in a link that returns to the page of its accommodation sheet.
  *
- * @param {Object} [props] The function component props.
- * @param {string} [props.id=''] - The accommodation id.
- * @param {string} [props.title='Titre du logement'] - The accommodation title.
- * @param {string} [props.coverURL=''] - The accommodation preview image URL.
+ * @param {Object} [Props] The function component Props.
+ * @param {String} [Props.id=''] - The accommodation id.
+ * @param {String} [Props.title='Titre du logement'] - The accommodation title.
+ * @param {String} [Props.coverURL=''] - The accommodation preview image URL.
  * @returns {JSX.Element} The Thumbnail component.
  */
 function Thumbnail({ id, title, coverURL }) {

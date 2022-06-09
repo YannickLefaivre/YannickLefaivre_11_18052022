@@ -222,7 +222,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="routes_About_index.jsx.html">routes/About/index.jsx</a>, <a href="routes_About_index.jsx.html#line14">line 14</a>
+        <a href="routes_About_index.jsx.html">routes/About/index.jsx</a>, <a href="routes_About_index.jsx.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -280,7 +280,7 @@
     
 
     
-    <h4 class="name" id="AccommodationSheet"><span class="type-signature"></span>AccommodationSheet<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="AboutDataProvider"><span class="type-signature"></span>AboutDataProvider<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;AboutData>}</span></h4>
     
 
     
@@ -288,7 +288,7 @@
 
 
 <div class="description">
-    Display the listing of the accommodation whose id is stored in the url after the user clicks on his card on the home page.
+    Retrieve the data from the values ​​of the companyto create from them an AboutData objectwhich will be returned by the function.
 </div>
 
 
@@ -332,7 +332,117 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="routes_AccommodationSheet_index.jsx.html">routes/AccommodationSheet/index.jsx</a>, <a href="routes_AccommodationSheet_index.jsx.html#line19">line 19</a>
+        <a href="utils_provider.js.html">utils/provider.js</a>, <a href="utils_provider.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An array of instances of the AboutData class.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;AboutData></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="AccommodationSheet"><span class="type-signature"></span>AccommodationSheet<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Display the listing of the accommodation whoseid is stored in the url after the user clicks onhis card on the home page.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_AccommodationSheet_index.jsx.html">routes/AccommodationSheet/index.jsx</a>, <a href="routes_AccommodationSheet_index.jsx.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -390,7 +500,303 @@
     
 
     
-    <h4 class="name" id="Banner"><span class="type-signature"></span>Banner<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="AccommodationSheetDataProvider"><span class="type-signature"></span>AccommodationSheetDataProvider<span class="signature">(id)</span><span class="type-signature"> &rarr; {AccommodationSheetData}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Retrieve accommodation data whose id matches the id parameterand create an AccommodationSheetData object with that data.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id of the apartment whose user haschosen to consult the accommodation sheet.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_provider.js.html">utils/provider.js</a>, <a href="utils_provider.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An instance of the AccommodationSheetData class.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AccommodationSheetData</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="alertFetchFailure"><span class="type-signature"></span>alertFetchFailure<span class="signature">(error)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Display a message in the console to warn that the call to fetch() ended with an error.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Error">Error</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The error object returned from a failed call to fetch.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_provider.js.html">utils/provider.js</a>, <a href="utils_provider.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="Banner"><span class="type-signature"></span>Banner<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -436,7 +842,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -462,7 +868,7 @@
 
             
 
-            <td class="description last">The function component props
+            <td class="description last">The function component Props
                 <h6>Properties</h6>
                 
 
@@ -519,7 +925,7 @@
             
                 <td class="default">
                 
-                    ""
+                    ''
                 
                 </td>
             
@@ -558,7 +964,7 @@
             
                 <td class="default">
                 
-                    ""
+                    ''
                 
                 </td>
             
@@ -570,13 +976,13 @@
 
         <tr>
             
-                <td class="name"><code>isAChildOfAboutComponent</code></td>
+                <td class="name"><code>styleModifier</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">Object</span>
 
 
             
@@ -597,12 +1003,106 @@
             
                 <td class="default">
                 
-                    false
+                    null
                 
                 </td>
             
 
-            <td class="description last">Enables (if true) and disables (if false) the display of the banner caption.</td>
+            <td class="description last">Allows you to add one or moreBEM-type modifier CSS classes to customize the style of the elementsmaking up the dropdown.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>bannerContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allows to modify the banner wrapper style.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>backgroundImageContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allows to modify the bannerbackground image style.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -650,7 +1150,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Banner_index.jsx.html">components/Banner/index.jsx</a>, <a href="components_Banner_index.jsx.html#line13">line 13</a>
+        <a href="components_Banner_index.jsx.html">components/Banner/index.jsx</a>, <a href="components_Banner_index.jsx.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -708,7 +1208,7 @@
     
 
     
-    <h4 class="name" id="Carousel"><span class="type-signature"></span>Carousel<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Carousel"><span class="type-signature"></span>Carousel<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -754,7 +1254,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -780,7 +1280,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -948,7 +1448,7 @@
     
 
     
-    <h4 class="name" id="Dropdown"><span class="type-signature"></span>Dropdown<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Dropdown"><span class="type-signature"></span>Dropdown<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -984,8 +1484,6 @@
         
 
         
-        <th>Default</th>
-        
 
         <th class="last">Description</th>
     </tr>
@@ -996,7 +1494,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -1021,73 +1519,44 @@
             
 
             
-                <td class="default">
+
+            <td class="description last">The function component Props.
+                <h6>Properties</h6>
                 
-                </td>
-            
 
-            <td class="description last">The function component props.</td>
-        </tr>
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>[props.children=(
-    <p
-      style={{
-        width: '100%',
-        height: 'auto',
-        alignItems: 'center',
-        justifyContent: 'center',
-        display: 'flex',
-        textAlign: 'center',
-      }}
-    >
-      Contenu du menu déroulant
-    </p>
-  )]</code></td>
+                <td class="name"><code>label</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">JSX.Element</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last">The content of the dropdown.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>props.label</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -1120,13 +1589,13 @@
 
         <tr>
             
-                <td class="name"><code>props.isAChildOfAboutComponent</code></td>
+                <td class="name"><code>children</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">JSX.Element</span>
 
 
             
@@ -1147,12 +1616,251 @@
             
                 <td class="default">
                 
-                    false
+                    {&lt;p className='Dropdown__content--empty'>Contenu du menu déroulant&lt;/p>}
                 
                 </td>
             
 
-            <td class="description last">Enables (if true) and disables (if false) the display of the banner caption.</td>
+            <td class="description last">The contents of the dropdown.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>styleModifier</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Allows you to add one or moreBEM-type modifier CSS classes to customize the style of the elementsmaking up the dropdown.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dropdownContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allows you tochange the style of the dropdown container.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>triggerAndLabelContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allowsto change the style of the label container and trigger button.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allows you to change thestyle of the label.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trigger</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allows you to changethe style of the trigger button.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>triggerIcon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Allows you to changethe icon style of the trigger button.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1193,7 +1901,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Dropdown_index.jsx.html">components/Dropdown/index.jsx</a>, <a href="components_Dropdown_index.jsx.html#line28">line 28</a>
+        <a href="components_Dropdown_index.jsx.html">components/Dropdown/index.jsx</a>, <a href="components_Dropdown_index.jsx.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -1251,7 +1959,7 @@
     
 
     
-    <h4 class="name" id="Error"><span class="type-signature"></span>Error<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Error"><span class="type-signature"></span>Error<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -1297,7 +2005,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -1323,7 +2031,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -1359,7 +2067,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -1380,7 +2088,7 @@
             
                 <td class="default">
                 
-                    'Une erreur est servenu lorsque nous avons essayé de récupérer les informations que vous vouliez consulter'
+                    "Une erreur est survenue lorsque nous avons tenté d'afficher les informations que vous voulez consulter. Recharger la page pourrait vous permettre de voir de nouveau ces informations."
                 
                 </td>
             
@@ -1474,6 +2182,116 @@
     <dd>
         
 <span class="param-type">JSX.Element</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GalleryDataProvider"><span class="type-signature"></span>GalleryDataProvider<span class="signature">()</span><span class="type-signature"> &rarr; {GalleryData}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Retrieve accommodation data and create anGalleryData object from it to return it.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_provider.js.html">utils/provider.js</a>, <a href="utils_provider.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An instance of the GalleryData class.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">GalleryData</span>
 
 
     </dd>
@@ -1601,7 +2419,7 @@
     
 
     
-    <h4 class="name" id="Host"><span class="type-signature"></span>Host<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Host"><span class="type-signature"></span>Host<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -1647,7 +2465,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -1673,7 +2491,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -1976,7 +2794,7 @@
     
 
     
-    <h4 class="name" id="Rate"><span class="type-signature"></span>Rate<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Rate"><span class="type-signature"></span>Rate<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -2022,7 +2840,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -2048,7 +2866,7 @@
 
             
 
-            <td class="description last">the function component props.
+            <td class="description last">the function component Props.
                 <h6>Properties</h6>
                 
 
@@ -2084,7 +2902,7 @@
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type"><a href="global.html#Integer">Integer</a></span>
 
 
             
@@ -2110,7 +2928,7 @@
                 </td>
             
 
-            <td class="description last">Housing rating.</td>
+            <td class="description last">Accommodation rating.</td>
         </tr>
 
     
@@ -2158,7 +2976,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Rate_index.jsx.html">components/Rate/index.jsx</a>, <a href="components_Rate_index.jsx.html#line15">line 15</a>
+        <a href="components_Rate_index.jsx.html">components/Rate/index.jsx</a>, <a href="components_Rate_index.jsx.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -2223,7 +3041,7 @@
     
 
     
-    <h4 class="name" id="RateButton"><span class="type-signature"></span>RateButton<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="RateButton"><span class="type-signature"></span>RateButton<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -2269,7 +3087,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -2295,7 +3113,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -2463,7 +3281,7 @@
     
 
     
-    <h4 class="name" id="Tag"><span class="type-signature"></span>Tag<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Tag"><span class="type-signature"></span>Tag<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -2509,7 +3327,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -2535,7 +3353,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -2571,7 +3389,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -2703,7 +3521,7 @@
     
 
     
-    <h4 class="name" id="Thumbnail"><span class="type-signature"></span>Thumbnail<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Thumbnail"><span class="type-signature"></span>Thumbnail<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -2749,7 +3567,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -2775,7 +3593,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -2811,7 +3629,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -2850,7 +3668,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -2889,7 +3707,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -3021,7 +3839,7 @@
     
 
     
-    <h4 class="name" id="Title"><span class="type-signature"></span>Title<span class="signature">(props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Title"><span class="type-signature"></span>Title<span class="signature">(Props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -3067,7 +3885,7 @@
 
         <tr>
             
-                <td class="name"><code>props</code></td>
+                <td class="name"><code>Props</code></td>
             
 
             <td class="type">
@@ -3093,7 +3911,7 @@
 
             
 
-            <td class="description last">The function component props.
+            <td class="description last">The function component Props.
                 <h6>Properties</h6>
                 
 
@@ -3129,7 +3947,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -3168,7 +3986,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -3295,78 +4113,33 @@
 
 
         
-            
-
     
 
     
-    <h4 class="name" id="useFetch"><span class="type-signature"></span>useFetch<span class="signature">(url)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
+        <h3 class="subsection-title">Type Definitions</h3>
 
-    
+        
+                
+<h4 class="name" id="Integer">Integer</h4>
+
 
 
 
 <div class="description">
-    Retrieve data from the address specified by the url parameter.
+    A positive or negative whole number.
 </div>
 
 
 
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
+<span class="param-type">Number</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the url of the resource to fetch as indicated in the mdn description of the resource parameter of the fetch() api.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
+        </li>
+    </ul>
 
 
 
@@ -3401,20 +4174,13 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_hooks_index.jsx.html">utils/hooks/index.jsx</a>, <a href="utils_hooks_index.jsx.html#line10">line 10</a>
+        <a href="components_Rate_index.jsx.html">components/Rate/index.jsx</a>, <a href="components_Rate_index.jsx.html#line5">line 5</a>
     </li></ul></dd>
     
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/fetch">https://developer.mozilla.org/en-US/docs/Web/API/fetch</a></li>
-        </ul>
-    </dd>
-    
 
     
 </dl>
@@ -3424,45 +4190,79 @@
 
 
 
+            
+                
+<h4 class="name" id="Integer">Integer</h4>
 
 
 
 
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    information from the result of a GET request, such as: the loading status of the resource, the data retrieved and the presence of an error.
+<div class="description">
+    A positive or negative whole number.
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Number</span>
 
 
-    </dd>
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_data-formatters_AccommodationSheetData.js.html">utils/data-formatters/AccommodationSheetData.js</a>, <a href="utils_data-formatters_AccommodationSheetData.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
 </dl>
 
-    
 
 
 
 
 
-        
-    
-
+            
     
 
     
@@ -3476,13 +4276,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#AccommodationSheet">AccommodationSheet</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#Dropdown">Dropdown</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Host">Host</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#Rate">Rate</a></li><li><a href="global.html#RateButton">RateButton</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#Thumbnail">Thumbnail</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.html#.exports">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#AboutDataProvider">AboutDataProvider</a></li><li><a href="global.html#AccommodationSheet">AccommodationSheet</a></li><li><a href="global.html#AccommodationSheetDataProvider">AccommodationSheetDataProvider</a></li><li><a href="global.html#alertFetchFailure">alertFetchFailure</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#Dropdown">Dropdown</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#GalleryDataProvider">GalleryDataProvider</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Host">Host</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#Rate">Rate</a></li><li><a href="global.html#RateButton">RateButton</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#Thumbnail">Thumbnail</a></li><li><a href="global.html#Title">Title</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 07 2022 13:35:38 GMT-0400 (heure normale de l’Amazonie)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 09 2022 17:31:00 GMT-0400 (heure normale de l’Amazonie)
 </footer>
 
 <script> prettyPrint(); </script>
