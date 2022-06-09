@@ -4,9 +4,9 @@ import './style.css'
 /**
  * Display host information.
  *
- * @param {Object} [props] - The function component props.
- * @param {string} [props.hostName] - The host name.
- * @param {string} [props.hostPictureURLs] - Host photo URLs.
+ * @param {Object} [Props] - The function component Props.
+ * @param {string} [Props.hostName] - The host name.
+ * @param {string} [Props.hostPictureURLs] - Host photo URLs.
  * @returns {JSX.Element} The Host component.
  */
 function Host({ hostName, hostPictureURLs }) {

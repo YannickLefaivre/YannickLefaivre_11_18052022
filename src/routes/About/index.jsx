@@ -1,8 +1,9 @@
-import { useFetch } from '../../utils/hooks'
+import { useState, useEffect } from 'react'
+import { AboutDataProvider } from '../../utils/provider'
 import Banner from '../../components/Banner'
 import Dropdown from '../../components/Dropdown'
-import Error from '../../components/Error'
 import Loader from '../../components/Loader'
+import Error from '../../components/Error'
 import aboutBanner from '../../assets/banners/about-banner.jpg'
 import './style.css'
 
@@ -12,7 +13,25 @@ import './style.css'
  * @returns {JSX.Element} The About component
  */
 function About() {
-  const { isLoading, data, error } = useFetch('/kasa-values.json')
+  const [isLoading, setLoading] = useState(true)
+  const [aboutPageData, setAboutPageData] = useState(null)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    const getAboutPageData = async () => {
+      try {
+        const aboutData = await AboutDataProvider()
+
+        setAboutPageData(aboutData)
+      } catch (err) {
+        setError(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    getAboutPageData()
+  }, [])
 
   return (
     <main className="main-content-wrapper main-content-wrapper--about-page">
@@ -24,18 +43,28 @@ function About() {
         <div className="About-page-main-content">
           <Banner
             bannerBackgroundImage={aboutBanner}
-            isAChildOfAboutComponent={true}
+            styleModifier={{
+              bannerContainer: 'Banner--about-page',
+              backgroundImageContainer: 'Banner__background-image--about-page',
+            }}
           />
           <div className="About-page-main-content__kasa-values">
-            {data &&
-              data.map((kasaValue) => (
+            {aboutPageData &&
+              aboutPageData.map((aboutData) => (
                 <Dropdown
-                  key={`${kasaValue.title}`}
-                  label={kasaValue.title}
-                  isAChildOfAboutComponent={true}
+                  key={`${aboutData.kasaValue.title}`}
+                  label={aboutData.kasaValue.title}
+                  styleModifier={{
+                    dropdownContainer: 'Dropdown--about-page',
+                    triggerAndLabelContainer:
+                      'Dropdown-trigger-and-label-container--about-page',
+                    label: 'Dropdown__label--about-page',
+                    trigger: 'Dropdown__trigger--about-page',
+                    triggerIcon: 'Dropdown__trigger__icon--about-page',
+                  }}
                 >
                   <p className="Dropdown__content Dropdown__content--about-page">
-                    {kasaValue.description}
+                    {aboutData.kasaValue.description}
                   </p>
                 </Dropdown>
               ))}

@@ -26,11 +26,12 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { useFetch } from '../../utils/hooks'
+            <pre class="prettyprint source linenums"><code>import { useState, useEffect } from 'react'
+import { AboutDataProvider } from '../../utils/provider'
 import Banner from '../../components/Banner'
 import Dropdown from '../../components/Dropdown'
-import Error from '../../components/Error'
 import Loader from '../../components/Loader'
+import Error from '../../components/Error'
 import aboutBanner from '../../assets/banners/about-banner.jpg'
 import './style.css'
 
@@ -40,7 +41,25 @@ import './style.css'
  * @returns {JSX.Element} The About component
  */
 function About() {
-  const { isLoading, data, error } = useFetch('/kasa-values.json')
+  const [isLoading, setLoading] = useState(true)
+  const [aboutPageData, setAboutPageData] = useState(null)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    const getAboutPageData = async () => {
+      try {
+        const aboutData = await AboutDataProvider()
+
+        setAboutPageData(aboutData)
+      } catch (err) {
+        setError(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    getAboutPageData()
+  }, [])
 
   return (
     &lt;main className="main-content-wrapper main-content-wrapper--about-page">
@@ -52,18 +71,28 @@ function About() {
         &lt;div className="About-page-main-content">
           &lt;Banner
             bannerBackgroundImage={aboutBanner}
-            isAChildOfAboutComponent={true}
+            styleModifier={{
+              bannerContainer: 'Banner--about-page',
+              backgroundImageContainer: 'Banner__background-image--about-page',
+            }}
           />
           &lt;div className="About-page-main-content__kasa-values">
-            {data &amp;&amp;
-              data.map((kasaValue) => (
+            {aboutPageData &amp;&amp;
+              aboutPageData.map((aboutData) => (
                 &lt;Dropdown
-                  key={`${kasaValue.title}`}
-                  label={kasaValue.title}
-                  isAChildOfAboutComponent={true}
+                  key={`${aboutData.kasaValue.title}`}
+                  label={aboutData.kasaValue.title}
+                  styleModifier={{
+                    dropdownContainer: 'Dropdown--about-page',
+                    triggerAndLabelContainer:
+                      'Dropdown-trigger-and-label-container--about-page',
+                    label: 'Dropdown__label--about-page',
+                    trigger: 'Dropdown__trigger--about-page',
+                    triggerIcon: 'Dropdown__trigger__icon--about-page',
+                  }}
                 >
                   &lt;p className="Dropdown__content Dropdown__content--about-page">
-                    {kasaValue.description}
+                    {aboutData.kasaValue.description}
                   &lt;/p>
                 &lt;/Dropdown>
               ))}
@@ -85,13 +114,13 @@ export default About
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#AccommodationSheet">AccommodationSheet</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#Dropdown">Dropdown</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Host">Host</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#Rate">Rate</a></li><li><a href="global.html#RateButton">RateButton</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#Thumbnail">Thumbnail</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.html#.exports">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#AboutDataProvider">AboutDataProvider</a></li><li><a href="global.html#AccommodationSheet">AccommodationSheet</a></li><li><a href="global.html#AccommodationSheetDataProvider">AccommodationSheetDataProvider</a></li><li><a href="global.html#alertFetchFailure">alertFetchFailure</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#Dropdown">Dropdown</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#GalleryDataProvider">GalleryDataProvider</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Host">Host</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#Rate">Rate</a></li><li><a href="global.html#RateButton">RateButton</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#Thumbnail">Thumbnail</a></li><li><a href="global.html#Title">Title</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Jun 07 2022 13:35:38 GMT-0400 (heure normale de l’Amazonie)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 09 2022 17:31:00 GMT-0400 (heure normale de l’Amazonie)
 </footer>
 
 <script> prettyPrint(); </script>

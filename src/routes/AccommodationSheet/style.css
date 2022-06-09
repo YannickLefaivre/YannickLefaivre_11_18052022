@@ -61,6 +61,18 @@
   row-gap: 1.6rem;
 }
 
+/* Dropdown modifier */
+
+.Dropdown__content--description-of-the-accommodation {
+  margin-block: 0;
+}
+
+.Dropdown__content--housing-equipment {
+  color: rgb(var(--primary-color));
+}
+
+/* Desktop style */
+
 @media (min-width: 1024px) {
   .Main-accommodation-infos {
     margin-bottom: 1.5rem;

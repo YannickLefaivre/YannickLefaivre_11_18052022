@@ -4,8 +4,8 @@ import './style.css'
 /**
  * Display one of a accommodation's rating buttons.
  *
- * @param {Object} [props] - The function component props.
- * @param {boolean} [props.isChecked=false] - Indicates the state of the note button [checked (primary color #FF6060) or unchecked (color of unfilled stars #E3E3E3)].
+ * @param {Object} [Props] - The function component Props.
+ * @param {boolean} [Props.isChecked=false] - Indicates the state of the note button [checked (primary color #FF6060) or unchecked (color of unfilled stars #E3E3E3)].
  * @returns {JSX.Element} The RateButton component.
  */
 function RateButton({ isChecked }) {

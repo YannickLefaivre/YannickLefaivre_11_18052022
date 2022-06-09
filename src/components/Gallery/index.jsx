@@ -1,7 +1,8 @@
-import { useFetch } from '../../utils/hooks'
+import { useState, useEffect } from 'react'
+import { GalleryDataProvider } from '../../utils/provider'
 import Thumbnail from '../Thumbnail'
-import Error from '../Error'
 import Loader from '../Loader'
+import Error from '../Error'
 import './style.css'
 
 /**
@@ -10,18 +11,34 @@ import './style.css'
  * @returns {JSX.Element} The Gallery component.
  */
 export default function Gallery() {
-  const { isLoading, data, error } = useFetch('/logements.json')
+  const [isLoading, setLoading] = useState(true)
+  const [galleryComponentData, setGalleryComponentData] = useState(null)
+  const [error, setError] = useState(false)
 
-  if (error) {
-    return <Error />
-  }
+  useEffect(() => {
+    const getGalleryComponentData = async () => {
+      try {
+        const galleryData = await GalleryDataProvider()
+
+        setGalleryComponentData(galleryData)
+      } catch (err) {
+        setError(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    getGalleryComponentData()
+  }, [])
 
   return (
     <div className="Gallery">
-      {isLoading ? (
+      {error ? (
+        <Error />
+      ) : isLoading ? (
         <Loader />
       ) : (
-        data.map((accommodation) => (
+        galleryComponentData.map((accommodation) => (
           <Thumbnail
             key={`accommodation-${accommodation.id}`}
             id={accommodation.id}

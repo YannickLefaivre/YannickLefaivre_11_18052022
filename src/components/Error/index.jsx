@@ -4,8 +4,8 @@ import './style.css'
 /**
  * Display an error message.
  *
- * @param {Object} [props] - The function component props.
- * @param {string} [props.message='Une erreur est servenu lorsque nous avons essayé de récupérer les informations que vous vouliez consulter'] - Error message displayed.
+ * @param {Object} [Props] - The function component Props.
+ * @param {String} [Props.message="Une erreur est survenue lorsque nous avons tenté d'afficher les informations que vous voulez consulter. Recharger la page pourrait vous permettre de voir de nouveau ces informations."] - Error message displayed.
  * @returns {JSX.Element} The Error component.
  */
 function Error({ message }) {
@@ -22,7 +22,7 @@ Error.propTypes = {
 
 Error.defaultProps = {
   message:
-    'Une erreur est servenu lorsque nous avons essayé de récupérer les informations que vous vouliez consulter',
+    "Une erreur est survenue lorsque nous avons tenté d'afficher les informations que vous voulez consulter. Recharger la page pourrait vous permettre de voir de nouveau ces informations.",
 }
 
 export default Error

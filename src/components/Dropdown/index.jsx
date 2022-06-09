@@ -4,62 +4,62 @@ import './style.css'
 
 /**
  * Display a dropdown whose content is added with the children prop.
- * 
- * @param {Object} [props] The function component props.
- * @param {JSX.Element} [props.children=(
-    <p
-      style={{
-        width: '100%',
-        height: 'auto',
-        alignItems: 'center',
-        justifyContent: 'center',
-        display: 'flex',
-        textAlign: 'center',
-      }}
-    >
-      Contenu du menu déroulant
-    </p>
-  )] - The content of the dropdown.
  *
- * @param {string} [props.label='Nom du menu déroulant'] - The dropdown label.
- * @param {boolean} [props.isAChildOfAboutComponent=false] - Enables (if true) and disables (if false) the display of the banner caption.
+ * @param {Object} [Props] The function component Props.
+ * @param {String} [Props.label='Nom du menu déroulant'] - The dropdown label.
+ * @param {JSX.Element} [Props.children={<p className='Dropdown__content--empty'>Contenu du menu déroulant</p>}] - The contents of the dropdown.
+ *
+ * @param {Object} [Props.styleModifier=null] - Allows you to add one or more
+ * BEM-type modifier CSS classes to customize the style of the elements
+ * making up the dropdown.
+ *
+ * @param {String} [Props.styleModifier.dropdownContainer=undefined] - Allows you to
+ * change the style of the dropdown container.
+ *
+ * @param {String} [Props.styleModifier.triggerAndLabelContainer=undefined] - Allows
+ * to change the style of the label container and trigger button.
+ *
+ * @param {String} [Props.styleModifier.label=undefined] -  Allows you to change the
+ * style of the label.
+ *
+ * @param {String} [Props.styleModifier.trigger=undefined] - Allows you to change
+ * the style of the trigger button.
+ *
+ * @param {String} [Props.styleModifier.triggerIcon=undefined] - Allows you to change
+ * the icon style of the trigger button.
+ *
  * @returns {JSX.Element} The Dropdown component.
  */
-function Dropdown({ label, children, isAChildOfAboutComponent }) {
+function Dropdown({ label, children, styleModifier }) {
   const [isOpen, setIsOpen] = useState(false)
-  const aboutPageModifierSuffix = '--about-page'
-  const whiteSpace = ' '
   const blankString = ''
+  const whiteSpace = ' '
 
   return (
     <div
       className={`Dropdown${
-        isAChildOfAboutComponent
-          ? `${whiteSpace}Dropdown${aboutPageModifierSuffix}`
+        styleModifier
+          ? whiteSpace + styleModifier.dropdownContainer
           : blankString
-      } ${isOpen ? `${whiteSpace}Dropdown--open` : blankString}`}
+      }${isOpen ? ` Dropdown--open` : blankString}`}
     >
       <div
-        className={`Dropdown-trigger-wrapper${
-          isAChildOfAboutComponent
-            ? `${whiteSpace}Dropdown-trigger-wrapper${aboutPageModifierSuffix}`
+        className={`Dropdown-trigger-and-label-container${
+          styleModifier
+            ? whiteSpace + styleModifier.triggerAndLabelContainer
             : blankString
         }`}
       >
         <h3
           className={`Dropdown__label${
-            isAChildOfAboutComponent
-              ? `${whiteSpace}Dropdown__label${aboutPageModifierSuffix}`
-              : blankString
+            styleModifier ? whiteSpace + styleModifier.label : blankString
           }`}
         >
           {label}
         </h3>
         <button
           className={`Dropdown__trigger${
-            isAChildOfAboutComponent
-              ? `${whiteSpace}Dropdown__trigger${aboutPageModifierSuffix}`
-              : blankString
+            styleModifier ? whiteSpace + styleModifier.trigger : blankString
           }`}
           onClick={() => {
             !isOpen ? setIsOpen(true) : setIsOpen(false)
@@ -67,8 +67,8 @@ function Dropdown({ label, children, isAChildOfAboutComponent }) {
         >
           <svg
             className={`Dropdown__trigger__icon${
-              isAChildOfAboutComponent
-                ? `${whiteSpace}Dropdown__trigger__icon${aboutPageModifierSuffix}`
+              styleModifier
+                ? whiteSpace + styleModifier.triggerIcon
                 : blankString
             }`}
             width="15"
@@ -92,26 +92,15 @@ function Dropdown({ label, children, isAChildOfAboutComponent }) {
 Dropdown.propTypes = {
   label: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
-  isAChildOfAboutComponent: PropTypes.bool.isRequired,
+  styleModifier: PropTypes.object,
 }
 
 Dropdown.defaultProps = {
   label: 'Nom du menu déroulant',
   children: (
-    <p
-      style={{
-        width: '100%',
-        height: 'auto',
-        alignItems: 'center',
-        justifyContent: 'center',
-        display: 'flex',
-        textAlign: 'center',
-      }}
-    >
-      Contenu du menu déroulant
-    </p>
+    <p className="Dropdown__content--empty">Contenu du menu déroulant</p>
   ),
-  isAChildOfAboutComponent: false,
+  styleModifier: null,
 }
 
 export default Dropdown
