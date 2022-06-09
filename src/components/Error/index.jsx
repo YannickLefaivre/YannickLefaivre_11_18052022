@@ -22,7 +22,7 @@ Error.propTypes = {
 
 Error.defaultProps = {
   message:
-    'Une erreur est servenu lorsque nous avons essayé de récupérer les informations que vous vouliez consulter',
+    "Une erreur est survenue lorsque nous avons tenté d'afficher les informations que vous voulez consulter. Recharger la page pourrait vous permettre de voir de nouveau ces informations.",
 }
 
 export default Error
