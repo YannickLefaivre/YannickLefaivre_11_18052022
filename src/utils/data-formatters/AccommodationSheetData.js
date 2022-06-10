@@ -2,7 +2,7 @@
  * A class that formats accommodation data to only
  * retrieve data used by the accommodation sheet page.
  */
-export default class AccommodationSheetData {
+class AccommodationSheetData {
   /**
    * A positive or negative whole number.
    * @typedef {Number} Integer
@@ -46,3 +46,5 @@ export default class AccommodationSheetData {
     this.equipments = equipments
   }
 }
+
+export default AccommodationSheetData
