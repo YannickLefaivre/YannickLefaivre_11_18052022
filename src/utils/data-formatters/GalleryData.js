@@ -2,7 +2,7 @@
  * A class that formats accommodation data to retrieve
  * only the data used by the gallery component.
  */
-export default class GalleryData {
+class GalleryData {
   /**
    *
    * @param {Object} data - Accommodation data.
@@ -16,3 +16,5 @@ export default class GalleryData {
     this.cover = cover
   }
 }
+
+export default GalleryData

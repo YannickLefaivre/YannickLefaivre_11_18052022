@@ -2,7 +2,7 @@
  * A class that formats company values ​​data for
  * display on the About page.
  */
-export default class AboutData {
+class AboutData {
   /**
    *
    * @param {Object} data - One of the values ​​of the company
@@ -13,3 +13,5 @@ export default class AboutData {
     this.kasaValue = data
   }
 }
+
+export default AboutData
