@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "ink-docstrap": "^1.3.2",
+    "jsdoc": "^3.6.10",
     "minami": "^1.2.3"
   }
 }

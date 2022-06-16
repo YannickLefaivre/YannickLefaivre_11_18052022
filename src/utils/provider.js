@@ -22,7 +22,7 @@ const alertFetchFailure = (error, data) => {
  * @return {GalleryData} An instance of the GalleryData class.
  */
 export async function GalleryDataProvider() {
-  let data = undefined
+  let data = {}
 
   try {
     const response = await fetch('/logements.json')
@@ -49,7 +49,7 @@ export async function GalleryDataProvider() {
  * @returns {AboutData[]} An array of instances of the AboutData class.
  */
 export async function AboutDataProvider() {
-  let data = undefined
+  let data = {}
 
   try {
     const response = await fetch('/kasa-values.json')
@@ -75,7 +75,7 @@ export async function AboutDataProvider() {
  * @return {AccommodationSheetData} An instance of the AccommodationSheetData class.
  */
 export async function AccommodationSheetDataProvider(id) {
-  let data = undefined
+  let data = {}
 
   try {
     const response = await fetch('/logements.json')
